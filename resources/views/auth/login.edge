@@ -1,5 +1,52 @@
 @layout('layout')
 
 @section('main')
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      @if(flashMessage('loginError'))
+      <span>
+        <div class="alert alert-danger">{{ flashMessage('loginError') }}</div>
+      </span>
+      @endif
+      <h2>Вход</h2>
+      <form role="form" action="{{ route('AuthController.login') }}" method="POST">
+          {{ csrfField() }}
+        <div class="form-group">
+          <label for="inputEmailId">Email:</label>
+          <input id="inputEmailId"
+                 type="email"
+                 class="form-control"
+                 placeholder="Введите email"
+                 name="email"
+                 required>
+            @if(hasErrorFor('email'))
+            <span>
+                <div class="invalid-feedback invalid-feedback--visible">{{ getErrorFor('email') }}</div>
+            </span>
+             @endif
+        </div>
 
+        <div class="form-group">
+          <label for="inputPasswordId">Пароль:</label>
+          <input id="inputPasswordId"
+                 type="password"
+                 class="form-control"
+                 placeholder="Password"
+                 name="password"
+                 required>
+            @if(hasErrorFor('password'))
+            <span>
+                <div class="invalid-feedback invalid-feedback--visible">{{ getErrorFor('password') }}</div>
+            </span>
+            @endif
+        </div>
+
+        <button type="submit" class="btn btn-primary">Войти</button>
+      </form>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
 @endsection

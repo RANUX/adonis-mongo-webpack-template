@@ -1,5 +1,83 @@
 @layout('layout')
 
 @section('main')
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <b-alert :show="error.length" variant="danger">{{ error }}</b-alert>
+      <h2>Регистрация</h2>
+      <form role="form" action="{{ route('AuthController.register') }}" method="POST">
+        {{ csrfField() }}
+        <div class="form-group">
+          <label for="usernameInputId">Имя:</label>
+          <input
+            id="usernameInputId"
+            type="text"
+            class="form-control"
+            name="username"
+            placeholder="Введите имя"
+            required
+          >
+        </div>
+        <div class="form-group">
+          <label for="emailInputId">Email:</label>
+          <input
+            id="emailInputId"
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Введите email"
+            required
+          >
+        </div>
 
+        <div class="form-group">
+          <label for="passwordInputId">Пароль:</label>
+          <input
+            id="passwordInputId"
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            name="password"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <div class="form-check">
+            <input
+              id="policyCheckInputId"
+              class="form-check-input"
+              type="checkbox"
+              name="agreePolicy"
+              required
+              checked
+            >
+            <label
+              class="form-check-label"
+              for="policyCheckInputId"
+            >Согласен с политикой конфеденциальности</label>
+          </div>
+          <div class="form-check">
+            <input
+              id="subscribeEmailInputId"
+              class="form-check-input"
+              type="checkbox"
+              name="subscribeEmail"
+              checked
+            >
+            <label
+              class="form-check-label"
+              for="subscribeEmailInputId"
+            >Согласен получать email рассылку</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Зарегестрироваться</button>
+      </form>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
 @endsection

@@ -46,6 +46,20 @@
             </div>
           </li>
         </ul>
+        <ul class="navbar-nav " >
+            @loggedIn
+            <li  class="nav-item">
+                <a class="nav-link" href="{{ route('AuthController.logout') }}">Выйти</a>
+              </li>
+            @else
+            <li  class="nav-item">
+              <a class="nav-link" href="{{ route('AuthController.login') }}">Войти</a>
+            </li>
+            <li  class="nav-item">
+              <a class="nav-link" href="{{ route('AuthController.register') }}">Регистрация</a>
+            </li>
+            @endloggedIn
+          </ul>
       </div>
     </div>
   </nav>
