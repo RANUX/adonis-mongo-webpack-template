@@ -9935,6 +9935,10 @@ label,
   border: 1px solid #ccc;
 }
 
+.invalid-feedback--visible {
+  display: block;
+}
+
 .layout {
   display: flex;
   min-height: 100vh;
