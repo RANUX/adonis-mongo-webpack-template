@@ -36,3 +36,10 @@ Additional configuration in `webpack.mix.js` file.
 
 ### Adonis run
 Run command: `adonis serve --dev`
+
+### Bootstrap
+If you don't like bootstrap, you can uninstall it and fix `style.scss` file.
+```bash
+npm uninstall bootswatch
+npm uninstall bootstrap
+```
