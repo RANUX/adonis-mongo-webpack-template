@@ -6,17 +6,17 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
       <b-alert :show="error.length" variant="danger">{{ error }}</b-alert>
-      <h2>Регистрация</h2>
+      <h2>User registration</h2>
       <form role="form" action="{{ route('AuthController.register') }}" method="POST">
         {{ csrfField() }}
         <div class="form-group">
-          <label for="usernameInputId">Имя:</label>
+          <label for="usernameInputId">Name:</label>
           <input
             id="usernameInputId"
             type="text"
             class="form-control"
             name="username"
-            placeholder="Введите имя"
+            placeholder="Name"
             required
           >
         </div>
@@ -27,13 +27,13 @@
             type="email"
             class="form-control"
             name="email"
-            placeholder="Введите email"
+            placeholder="Email"
             required
           >
         </div>
 
         <div class="form-group">
-          <label for="passwordInputId">Пароль:</label>
+          <label for="passwordInputId">Password:</label>
           <input
             id="passwordInputId"
             type="password"
@@ -57,7 +57,7 @@
             <label
               class="form-check-label"
               for="policyCheckInputId"
-            >Согласен с политикой конфеденциальности</label>
+            >Agree with policy</label>
           </div>
           <div class="form-check">
             <input
@@ -70,11 +70,11 @@
             <label
               class="form-check-label"
               for="subscribeEmailInputId"
-            >Согласен получать email рассылку</label>
+            >Subscribe to newsletter</label>
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Зарегестрироваться</button>
+        <button type="submit" class="btn btn-primary">Register</button>
       </form>
     </div>
     <div class="col-md-2"></div>

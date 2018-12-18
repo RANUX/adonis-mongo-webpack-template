@@ -19,7 +19,7 @@ class AuthController {
       await auth.attempt(email, password)
       return response.redirect('/')
     } catch (error) {
-      session.flash({ loginError: 'Не найдена учетная запись!' })
+      session.flash({ loginError: 'These credentials do not work!' })
       return response.redirect('/auth/login')
     }
   }
